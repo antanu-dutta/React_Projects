@@ -1,4 +1,5 @@
 import { useEffect, useId, useState } from "react";
+import { generateRandomNumber, getRandomArbitrary } from "../helper";
 
 const Validator = () => {
   const passwordId = useId();
@@ -6,11 +7,6 @@ const Validator = () => {
   const [isValid, setIsValid] = useState(
     "Enter password including a special character and a length of at least 8"
   );
-
-  const generateRandomNumber = (limit) => Math.floor(Math.random() * limit);
-
-  const getRandomArbitrary = (min, max) =>
-    Math.floor(Math.random() * (max - min + 1)) + min;
 
   const checkIsPasswordStrong = () => {
     const hasSpecialChar = /[!@#$%^&*()]/.test(password); // Check for special character
